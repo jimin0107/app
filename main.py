@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import koreanize_matplotlib
 
 # Function to calculate middle school student population
 def calculate_middle_school_pop(region, data):
