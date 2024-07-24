@@ -30,7 +30,7 @@ try:
         middle_school_pop, total_pop = calculate_middle_school_pop(region, data)
         
         if middle_school_pop is not None:
-            labels = ['중학생 (12-14세)', '기타 인구']
+            labels = ['중학생 (14-16세)', '기타 인구']
             sizes = [middle_school_pop, total_pop - middle_school_pop]
             colors = ['#ff9999','#66b3ff']
 
