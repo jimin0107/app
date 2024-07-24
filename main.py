@@ -10,14 +10,14 @@ def calculate_middle_school_pop(region, data):
         st.error("해당 지역을 찾을 수 없습니다.")
         return None, None
     
-    middle_school_columns = ['2023년12월_계_14세', '2023년12월_계_15세', '2023년12월_계_16세']
-    middle_school_pop = region_data[middle_school_columns].replace(',', '', regex=True).astype(int).sum(axis=1).values[0]
+    elementary_school_columns = ['2023년12월_계_8세', '2023년12월_계_9세', '2023년12월_계_10세', '2023년 12월 11세', '2023년 12월 12세', '2023년 12월 13세]
+    elementary_school_pop = region_data[middle_school_columns].replace(',', '', regex=True).astype(int).sum(axis=1).values[0]
     total_pop = region_data['2023년12월_계_총인구수'].replace(',', '', regex=True).astype(int).values[0]
     
-    return middle_school_pop, total_pop
+    return elementary_school_pop, total_pop
 
 # Streamlit app
-st.title("지역별 중학생 인구 비율")
+st.title("지역별 초등학생 인구 비율")
 
 try:
     # Load the CSV file
@@ -30,7 +30,7 @@ try:
         middle_school_pop, total_pop = calculate_middle_school_pop(region, data)
         
         if middle_school_pop is not None:
-            labels = ['중학생 (14-16세)', '기타 인구']
+            labels = ['초등학생 (8-13세)', '기타 인구']
             sizes = [middle_school_pop, total_pop - middle_school_pop]
             colors = ['#ff9999','#66b3ff']
 
