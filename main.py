@@ -10,7 +10,7 @@ def calculate_middle_school_pop(region, data):
         st.error("해당 지역을 찾을 수 없습니다.")
         return None, None
     
-    middle_school_columns = ['2023년12월_계_12세', '2023년12월_계_13세', '2023년12월_계_14세']
+    middle_school_columns = ['2023년12월_계_14세', '2023년12월_계_15세', '2023년12월_계_16세']
     middle_school_pop = region_data[middle_school_columns].replace(',', '', regex=True).astype(int).sum(axis=1).values[0]
     total_pop = region_data['2023년12월_계_총인구수'].replace(',', '', regex=True).astype(int).values[0]
     
