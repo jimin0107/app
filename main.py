@@ -14,7 +14,7 @@ def calculate_middle_school_pop(region, data):
     middle_school_pop = region_data[middle_school_columns].replace(',', '', regex=True).astype(int).sum(axis=1).values[0]
     total_pop = region_data['2023년12월_계_총인구수'].replace(',', '', regex=True).astype(int).values[0]
     
-    return elementary_school_pop, total_pop
+    return middle_school_pop, total_pop
 
 # Streamlit app
 st.title("지역별 중학생 인구 비율")
